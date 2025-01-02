@@ -8,6 +8,10 @@
   margin-top: -45px;
 }
 
+textarea{
+  justify-items: center;
+}
+
 .input {
   width: 39.875rem;
   height: 3.375rem;
@@ -19,6 +23,8 @@
   padding: 8px 12px;
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
+  resize: none;
+  padding: 15px;
 }
 
 input:focus {

@@ -1,32 +1,26 @@
-import style from "./Task.module.css";
+import style from "./TaskList.module.css";
 import clipboard from "../../assets/task/Clipboard.svg";
-import { List } from "./List/List";
-import { useState } from "react";
+import { ListItem } from "../ListItem";
 
-
-interface iTask {
+interface Task {
   id: number;
-  title: string;
   description: string;
   completed: boolean;
 }
 
-export const Task = () => {
+type TaskListProps = {
+  tasks: Task[];
+  onDeleteTask?: (tId: number) => void;
+  onChangeTask?: (tId: number) => void;
+};
 
-  const [task, setTask] = useState<iTask[]>([]);
-
-  const totalTasks = task.length;
-  const completedTasks = task.filter((t) => t.completed).length;
-
-  const handleDeleteTask = (tId: number) => {
-    console.log(`Deleting task with ID: ${tId}`);
-    
-  };
-
-  const handleChangeTask = (tId: number) => {
-    console.log(`Changing task with ID: ${tId}`);
-  };
-
+export const TaskList = ({
+  tasks,
+  onDeleteTask,
+  onChangeTask,
+}: TaskListProps) => {
+  const totalTasks = tasks.length;
+  const completedTasks = tasks.filter((t) => t.completed).length;
   return (
     <section className={style.taskContainerCenter}>
       <div className={style.taskContainer}>
@@ -61,8 +55,13 @@ export const Task = () => {
           </div>
         ) : (
           <ul>
-            {task.map((t) => (
-              <List key={t.id} task={t} onDelete={handleDeleteTask} onChange={handleChangeTask}/>
+            {tasks.map((task) => (
+              <ListItem
+                key={task.id}
+                task={task}
+                onDeleteTask={onDeleteTask}
+                onChangeTask={onChangeTask}
+              />
             ))}
           </ul>
         )}

@@ -38,12 +38,16 @@
   font: var(--bold);
 }
 
-.completed{
+.completed {
   color: var(--purple);
+  font: inherit;
+  font-size: 14px;
 }
 
-.created{
+.created {
   color: var(--blue);
+  font: inherit;
+  font-size: 14px;
 }
 
 .taskHeader > div > strong {
@@ -68,5 +72,5 @@
 }
 
 .taskList > div > div > strong {
-    font-weight: 700;
+  font-weight: 700;
 }
