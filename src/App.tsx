@@ -1,5 +1,5 @@
 import { Header } from "./components/Header/Header";
-import { Search } from "./components/Search/Search";
+import { AddTask } from "./components/Adding/AddTask";
 import { Task } from "./components/Tasks/Task";
 import "./styled/global.css";
 
@@ -7,7 +7,7 @@ export function App() {
   return (
     <div>
       <Header />
-      <Search />
+      <AddTask />
       <Task />
     </div>
   );

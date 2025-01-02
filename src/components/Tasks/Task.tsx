@@ -1,36 +1,19 @@
 import style from "./Task.module.css";
 import clipboard from "../../assets/task/Clipboard.svg";
 import { List } from "./List/List";
+import { useState } from "react";
 
-const task = [
-  {
-    id: 1,
-    title: "Task Circular",
-    description: "Organize the files for Monday's meeting",
-    completed: false,
-  },
-  {
-    id: 2,
-    title: "Task Circular",
-    description: "Review the quarterly financial reports",
-    completed: true,
-  },
-  {
-    id: 3,
-    title: "Task Circular",
-    description: "Plan the schedule for the corporate event",
-    completed: false,
-  },
-  {
-    id: 4,
-    title: "Task Circular",
-    description: "Send follow-up emails to clients",
-    completed: true,
-  },
-];
 
+interface iTask {
+  id: number;
+  title: string;
+  description: string;
+  completed: boolean;
+}
 
 export const Task = () => {
+
+  const [task, setTask] = useState<iTask[]>([]);
 
   const totalTasks = task.length;
   const completedTasks = task.filter((t) => t.completed).length;
