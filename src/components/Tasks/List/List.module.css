@@ -1,0 +1,42 @@
+.listItem {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  width: 46rem;
+  height: 4.5rem;
+  margin-bottom: 5px;
+  background: var(--gray-500);
+  color: var(--white);
+  border-radius: 8px;
+}
+
+li > button,
+li > div > button,
+li > button,
+li > div > div > button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  max-width: 24px;
+  max-height: 24px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.descriptionAndDelete {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.title {
+  width: 151px;
+}

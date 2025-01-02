@@ -39,11 +39,11 @@
 }
 
 .completed{
-    color: var(--purple);
+  color: var(--purple);
 }
 
 .created{
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .taskHeader > div > strong {
